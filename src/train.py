@@ -35,7 +35,7 @@ PARAM_GRID = {
     "penalty": ["l1", "l2"],
     "solver": ["liblinear", "saga"],
     "max_iter": [200, 500],
-    "class_weight": [None, "balanced"],
+    "class_weight": ["balanced"],
 }
 
 
