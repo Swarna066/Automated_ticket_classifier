@@ -9,7 +9,11 @@ import pickle
 
 from preprocessing import preprocess
 
-MODELS_DIR = "../models"
+from pathlib import Path
+
+# Dynamically resolve the absolute path to the models directory
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODELS_DIR = BASE_DIR / "models"
 
 _model = None
 _count_vect = None
