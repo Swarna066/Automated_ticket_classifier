@@ -17,7 +17,7 @@ from predict import classify_ticket  # noqa: E402
 
 st.set_page_config(page_title="Ticket Classifier", page_icon="🎫")
 
-st.title("🎫 Automated Ticket Classifier")
+st.title("🎫 Automated Financial Complaint Classification ")
 st.write(
     "Paste in a customer ticket / complaint below and the model will "
     "predict which category it belongs to."
