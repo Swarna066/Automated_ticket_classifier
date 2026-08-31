@@ -19,6 +19,7 @@ import string
 
 import nltk
 import spacy
+from spacy.cli import download
 
 # These downloads are cached after the first run, so this is cheap on
 # every later import.
@@ -27,7 +28,12 @@ nltk.download("punkt_tab", quiet=True)
 
 # Loaded once at import time - loading a spaCy model is slow, so we
 # don't want to redo it for every single ticket.
-_nlp = spacy.load("en_core_web_sm")
+try:
+    _nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Downloading spaCy English model...")
+    download("en_core_web_sm")
+    _nlp = spacy.load("en_core_web_sm")
 
 
 def clean_text(text: str) -> str:
